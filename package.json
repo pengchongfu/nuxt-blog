@@ -6,6 +6,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "4.0.0-alpha.6",
+    "marked": "^0.3.6",
     "normalize.css": "^7.0.0",
     "nuxt": "latest"
   },
@@ -28,6 +29,7 @@
     "eslint-plugin-promise": "^3.4.1",
     "eslint-plugin-standard": "^2.0.1",
     "eslint-plugin-vue": "^2.0.1",
+    "js-yaml": "^3.8.4",
     "vue-class-component": "^5.0.1"
   }
 }

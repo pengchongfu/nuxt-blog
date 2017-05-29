@@ -1,3 +1,7 @@
+var path = require('path')
+var postLoader = require.resolve('./assets/post-loader.js')
+var PostPlugin = require('./assets/post-plugin.js')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -43,7 +47,13 @@ module.exports = {
         use: [ 'vue-style-loader', 'css-loader' ],
         include: /(node_modules)/
       })
+      config.module.rules.push({
+        test: /\.md$/,
+        use: [ 'json-loader', postLoader]
+      })
       config.resolve.alias['nuxt-class-component'] = '~plugins/nuxt-class-component'
+      config.resolve.alias['~posts'] = path.join(__dirname, 'posts')
+      config.plugins.push(new PostPlugin())
       if (ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
