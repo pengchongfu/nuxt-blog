@@ -1,12 +1,15 @@
-<template>
-  <div>
-    <h1>
-      nuxt blog
-    </h1>
-  </div>
-</template>
-
 <script>
+import styles from '~assets/index.css'
+
 export default {
+  render () {
+    return (
+      <div>
+        <h1 class={ styles.title }>
+          nuxt blog
+        </h1>
+      </div>
+    )
+  }
 }
 </script>

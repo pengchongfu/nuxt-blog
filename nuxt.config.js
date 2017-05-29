@@ -25,6 +25,15 @@ module.exports = {
     ** Run ESLINT on save
     */
     extend (config, ctx) {
+      for (var i = 0; i < config.module.rules.length; i++){
+        if (config.module.rules[i].test.source === "\\.css$") {
+          config.module.rules[i] = {
+            test: /\.css$/,
+            use: [ 'vue-style-loader', 'css-loader?modules' ] 
+          }
+          break;
+        }
+      }
       if (ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
