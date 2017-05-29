@@ -32,11 +32,17 @@ module.exports = {
         if (config.module.rules[i].test.source === "\\.css$") {
           config.module.rules[i] = {
             test: /\.css$/,
-            use: [ 'vue-style-loader', 'css-loader?modules' ] 
+            use: [ 'vue-style-loader', 'css-loader?modules' ],
+            exclude: /(node_modules)/
           }
           break;
         }
       }
+      config.module.rules.push({
+        test: /\.css$/,
+        use: [ 'vue-style-loader', 'css-loader' ],
+        include: /(node_modules)/
+      })
       config.resolve.alias['nuxt-class-component'] = '~plugins/nuxt-class-component'
       if (ctx.isClient) {
         config.module.rules.push({
@@ -47,5 +53,9 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  css: [
+    'normalize.css/normalize.css',
+    'bootstrap/dist/css/bootstrap-grid.min.css'
+  ]
 }

@@ -6,7 +6,7 @@ export default class Header extends Vue {
   render () {
     return (
       <div>
-        <h1>
+        <h1 class="container">
           header
         </h1>
       </div>
