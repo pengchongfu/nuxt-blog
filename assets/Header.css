@@ -1,0 +1,10 @@
+.header {
+  background-color: rgb(32, 160, 255);
+  height: 60px;
+}
+
+.title {
+  line-height: 60px;
+  color: #fff;
+  font-size: 20px;
+}

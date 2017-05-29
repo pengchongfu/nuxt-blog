@@ -56,6 +56,7 @@ module.exports = {
   },
   css: [
     'normalize.css/normalize.css',
-    'bootstrap/dist/css/bootstrap-grid.min.css'
+    'bootstrap/dist/css/bootstrap-grid.min.css',
+    '~assets/app.css'
   ]
 }
