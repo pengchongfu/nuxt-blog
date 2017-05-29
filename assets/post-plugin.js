@@ -26,6 +26,7 @@ function generateMetaData() {
       var yfm = match[2]
       try {
         meta = yaml.load(yfm)
+        meta.content = /\s+(.+)\s+/.exec(match[3])[1]
       } catch (e) {
         console.log(e)
       }

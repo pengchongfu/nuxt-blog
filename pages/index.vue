@@ -5,17 +5,29 @@ import Component from 'nuxt-class-component'
 import styles from '~assets/index.css'
 
 import Header from '~components/Header'
+import Card from '~components/Card'
+
+import meta from '~posts/meta'
 
 @Component
 export default class Index extends Vue {
   title = 'nuxt blog'
   render () {
+    let cards = meta.map(item => {
+      return (
+        <div class="col-md-4">
+          <Card title={ item.title } tag={ item.tag } content={ item.content }/>
+        </div>
+      )
+    })
     return (
       <div>
         <Header/>
-        <h1 class={ styles.title }>
-          { this.title }
-        </h1>
+        <div class={ `container ${styles.body}` }>
+          <div class="row">
+            { cards }
+          </div>
+        </div>
       </div>
     )
   }
