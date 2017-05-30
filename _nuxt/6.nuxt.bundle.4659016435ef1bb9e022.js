@@ -1,0 +1,1 @@
+webpackJsonp([6],{177:function(n,t){n.exports={content:"\nhow to run\n\n- `git clone`\n- `cd nuxt-blog`\n- `yarn`\n- `npm run dev`",meta:{title:"run",tag:["node","webpack"]}}}});

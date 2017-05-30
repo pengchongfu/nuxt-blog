@@ -1,0 +1,1 @@
+webpackJsonp([5],{153:function(t,o){t.exports=[{title:"run",tag:["node","webpack"],content:"how to run",name:"run.md"},{title:"lesson",tag:["webpack","nuxt"],content:"After configing this project for hours, I know a lesson:",name:"lesson.md"},{title:"about",tag:["nuxt","vue","webpack"],content:"this demo show you how to build a blog like `hexo` with `nuxt`.",name:"about.md"}]}});
