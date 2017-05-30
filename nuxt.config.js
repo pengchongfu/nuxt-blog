@@ -75,6 +75,7 @@ module.exports = {
         return `/post/${item.name}`
       })
       callback(null, routes)
-    }
+    },
+    interval: 1
   }
 }
