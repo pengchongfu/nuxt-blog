@@ -7,7 +7,7 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'starter',
+    title: 'nuxt-blog',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -77,5 +77,8 @@ module.exports = {
       callback(null, routes)
     },
     interval: 1
+  },
+  router: {
+    base: '/nuxt-blog/'
   }
 }
