@@ -16,7 +16,7 @@ export default class Index extends Vue {
     let cards = meta.map(item => {
       return (
         <div class="col-md-4">
-          <Card title={ item.title } tag={ item.tag } content={ item.content }/>
+          <nuxt-link to={ `/post/${item.name}` }><Card title={ item.title } tag={ item.tag } content={ item.content }/></nuxt-link>
         </div>
       )
     })

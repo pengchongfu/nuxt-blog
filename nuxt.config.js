@@ -1,6 +1,6 @@
 var path = require('path')
 var postLoader = require.resolve('./assets/post-loader.js')
-var PostPlugin = require('./assets/post-plugin.js')
+var { PostPlugin, generateMetaData } = require('./assets/post-plugin.js')
 
 module.exports = {
   /*
@@ -68,5 +68,13 @@ module.exports = {
     'normalize.css/normalize.css',
     'bootstrap/dist/css/bootstrap-grid.min.css',
     '~assets/app.css'
-  ]
+  ],
+  generate: {
+    routes: function (callback) {
+      var routes = generateMetaData().map(item => {
+        return `/post/${item.name}`
+      })
+      callback(null, routes)
+    }
+  }
 }

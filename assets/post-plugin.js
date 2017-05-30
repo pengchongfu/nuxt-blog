@@ -27,6 +27,7 @@ function generateMetaData() {
       try {
         meta = yaml.load(yfm)
         meta.content = /\s+(.+)\s+/.exec(match[3])[1]
+        meta.name = path.basename(post)
       } catch (e) {
         console.log(e)
       }
@@ -35,6 +36,10 @@ function generateMetaData() {
   })
   fs.writeFileSync(path.resolve(__dirname, '../posts/meta.json'), JSON.stringify(postsMetaList))
   console.log('generate meta finished\n')
+  return postsMetaList
 }
 
-module.exports = PostPlugin
+module.exports = {
+  PostPlugin,
+  generateMetaData
+}
